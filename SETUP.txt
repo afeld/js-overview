@@ -1,0 +1,3 @@
+bundle install
+bundle exec showoff serve
+open "http://localhost:9090"
