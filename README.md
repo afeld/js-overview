@@ -66,9 +66,7 @@
 # Numbers
 
 * the only numeric datatype
-* floating point!
-
-.notes this is why it's not "hardcore"
+* floating point! (not "hardcore")
 
 !SLIDE
 
@@ -100,7 +98,7 @@ Functional, not block-level (C-style)
 
 !SLIDE
 
-# Context
+# Scope (cont.)
 
     @@@javascript
     var outer = function(){
@@ -112,7 +110,18 @@ Functional, not block-level (C-style)
       inner(); // 6
     };
 
-.notes maybe this is too detailed?
+!SLIDE Context
+
+    @@@javascript
+    var myVariable = "I'm global!";
+
+    function printMyVariable(){
+      return this.myVariable;
+    }
+
+    printMyVariable(); // "I'm global!"
+
+    printMyVariable.apply({ myVariable: "I'm local!" }); // "I'm local!"
 
 !SLIDE
 
@@ -136,8 +145,16 @@ Functional, not block-level (C-style)
 
 # Fake OOP
 
-* prototypes
-* extending objects
+    @@@javascript
+    var Person = function(first, last){
+      this.first = first;
+      this.last = last;
+    };
+
+    var bob = new Person('Bob', 'Hope');
+    var sally = new Person('Sally', 'Field');
+
+    bob.first; // 'Bob'
 
 !SLIDE
 
