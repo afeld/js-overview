@@ -85,6 +85,16 @@ First-class!
 
 !SLIDE
 
+# Evented
+
+    @@@javascript
+    var elements = $('.submit');
+    elements.on('click', function(){
+      alert('Thanks for buying!');
+    });
+
+!SLIDE
+
 # Scope
 
 Functional, not block-level (C-style)
@@ -110,19 +120,6 @@ Functional, not block-level (C-style)
       inner(); // 6
     };
 
-!SLIDE Context
-
-    @@@javascript
-    var myVariable = "I'm global!";
-
-    function printMyVariable(){
-      return this.myVariable;
-    }
-
-    printMyVariable(); // "I'm global!"
-
-    printMyVariable.apply({ myVariable: "I'm local!" }); // "I'm local!"
-
 !SLIDE
 
 # Closures
@@ -140,6 +137,23 @@ Functional, not block-level (C-style)
     wrapped(); // 6
 
 .notes show binding of context?
+
+!SLIDE
+
+# Context
+
+    @@@javascript
+    var myVariable = "I'm global!";
+
+    function printMyVariable(){
+      return this.myVariable;
+    }
+
+    printMyVariable(); // "I'm global!"
+
+    printMyVariable.apply({ myVariable: "I'm local!" }); // "I'm local!"
+
+.notes too detailed?
 
 !SLIDE
 
@@ -213,6 +227,15 @@ nope.
 
 # Frameworks
 
+## Utilities
+
+* jQuery
+* Underscore
+
+!SLIDE
+
+# Frameworks
+
 ## Basic MVC
 
 * Backbone
@@ -224,8 +247,8 @@ nope.
 
 ## Data Binding
 
-* Angular
-* Ember
+* [Angular](http://angularjs.org/)
+* [Ember](http://emberjs.com/)
 
 !SLIDE
 
