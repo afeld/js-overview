@@ -1,0 +1,30 @@
+#preso,
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+pre.sh_sourceCode {
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+
+
+h2 {
+  padding-left: 40px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.slide {
+  padding-bottom: 6em;
+}
