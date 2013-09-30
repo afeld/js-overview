@@ -74,7 +74,16 @@
 
 # Functions
 
-* first-class
+First-class!
+
+    @@@javascript
+    var myFun = function(){
+      return 'foo';
+    };
+    myFun(); // 'foo'
+
+    var otherRef = myFun;
+    otherRef(); // 'foo'
 
 !SLIDE
 
@@ -82,15 +91,44 @@
 
 Functional, not block-level (C-style)
 
+    @@@javascript
+    if (true) {
+      var foo = 6;
+    }
+
+    foo; // 6
+
 !SLIDE
 
 # Context
+
+    @@@javascript
+    var outer = function(){
+      var foo = 6;
+      var inner = function(){
+        return foo;
+      };
+
+      inner(); // 6
+    };
 
 .notes maybe this is too detailed?
 
 !SLIDE
 
 # Closures
+
+    @@@javascript
+    var wrapper = function(){
+      var foo = 6;
+      var inner = function(){
+        return foo;
+      };
+      return inner;
+    };
+
+    var wrapped = wrapper();
+    wrapped(); // 6
 
 .notes show binding of context?
 
@@ -105,26 +143,31 @@ Functional, not block-level (C-style)
 
 # Namespacing
 
+!SLIDE
+
+# Namespacing
+
 nope.
+
+!SLIDE
+
+# Namespacing
+
+    @@@javascript
+    var app = {}; // global
+    app.views = {};
+    app.views.sidebar = {};
 
 !SLIDE
 
 # Transpiling
 
 * CoffeeScript
-* Typescript
+* TypeScript
 
 !SLIDE
 
 # Coming Up
-
-!SLIDE
-
-# Coming Up
-
-## asm.js
-
-https://blog.mozilla.org/blog/2013/03/27/mozilla-is-unlocking-the-power-of-the-web-as-a-platform-for-gaming/
 
 !SLIDE
 
@@ -136,6 +179,14 @@ https://blog.mozilla.org/blog/2013/03/27/mozilla-is-unlocking-the-power-of-the-w
 * modules
 * getters and setters
 * generators
+
+!SLIDE
+
+# Coming Up
+
+## asm.js
+
+[demo](https://blog.mozilla.org/blog/2013/03/27/mozilla-is-unlocking-the-power-of-the-web-as-a-platform-for-gaming/)
 
 !SLIDE
 
